@@ -11,10 +11,11 @@ void setup() {
 #define LEDOFF HIGH
 
 void loop() {
-  //Luetaan yksi merkki sarjaportista
-  int x = Serial.read();
+
   //Tutkitaan oliko sarjaportissa mitään
-  if(x != -1){
+  if(Serial.available() > 0){
+    //Luetaan yksi merkki sarjaportista
+    int x = Serial.read();
     //Tarkistetaan oliko sarjaporttiin saapunut 'S' kirjain
     if(x == 'S'){
       //Jos merkki on 'S' sytytetään ledi
