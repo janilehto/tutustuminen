@@ -20,6 +20,7 @@ void setup() {
    * Alla olevalla funktiokutsulla konfiguroidaan pinni 13 lähdöksi (OUTPUT)
    */
   pinMode(LED, OUTPUT);
+  Serial.begin(9600);
 }
 /*
  * Luodaan muuttuja johon tallennetaan millisekuntimäärä jolla valitaan viiveen pituus.
@@ -37,6 +38,7 @@ void loop(){
    * ledin syttymään.
    */
    digitalWrite(LED, HIGH);
+   Serial.println("Ledi loistaa");
    /*
     * delay() funktiokutsulla saadaan laite pysähtymään halutuksi ajaksi. Haluttu 
     * aika välitetään delay() funktiolle parametrillä, sulkujen välissä.
@@ -44,6 +46,7 @@ void loop(){
     delay(viive);
     // Sammutetaan ledi
     digitalWrite(LED, LOW);
+    Serial.println("Ledi ei loista");
     // Pysäytetään laite
     delay(viive);
 }
